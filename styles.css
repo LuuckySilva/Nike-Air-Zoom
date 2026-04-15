@@ -1,0 +1,284 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ccee66;
+    color: white;
+    padding: 20px 24px;
+    min-height: 100vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body::before {
+    content: '';
+    background: #202020;
+    position: absolute;
+    top: -200px;
+    left: -100px;
+    transform: rotate(-70deg);
+    width: 200%;
+    height: 80%;
+}
+
+body::after {
+    content: 'Nike';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 70px;
+    font-weight: bold;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.logo {
+    width: 56px;
+    position: relative;
+    z-index: 2;
+}
+
+h4 {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0 0 20px;
+    line-height: 1;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.botao-carrinho {
+    background: #a3be52;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.botao-carrinho:hover {
+    opacity: 0.7;
+}
+
+.imagem-tenis {
+    width: 200px;
+    transform: rotate(-15deg);
+    filter: drop-shadow(10px 20px 20px #161616);
+    transition: 1s;
+}
+
+.troca-efeito {
+    opacity: 0;
+    transform: rotate(-15deg) translateY(-30px);
+}
+
+.caixa-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    padding: 20px 0 0;
+    gap: 10px;
+    text-align: center;
+}
+
+.caixa-texto {
+    max-width: 100%;
+    order: 2;
+}
+
+.caixa-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.caixa-botoes {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 16px;
+    padding-bottom: 30px;
+}
+
+.botoes {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.botoes:active {
+    opacity: 0.6;
+}
+
+.verde  { background: #ccee66; }
+.azul   { background: #58cced; }
+.rosa   { background: #bd8b97; }
+
+/* ================================
+   TABLET — a partir de 768px
+   ================================ */
+@media screen and (min-width: 768px) {
+    body {
+        padding: 20px 40px;
+        overflow-y: hidden;
+    }
+
+    body::before {
+        top: 0;
+        left: -350px;
+        width: 120%;
+        height: 120%;
+    }
+
+    body::after {
+        font-size: 100px;
+        top: 50%;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .caixa-principal {
+        flex-direction: row;
+        text-align: left;
+        height: 75%;
+        gap: 20px;
+    }
+
+    .caixa-texto {
+        max-width: 400px;
+        order: 1;
+    }
+
+    .caixa-imagem {
+        order: 2;
+        width: auto;
+        overflow: visible;
+    }
+
+    .imagem-tenis {
+        width: 420px;
+        transform: rotate(-25deg);
+        filter: drop-shadow(20px 30px 30px #161616);
+    }
+
+    .troca-efeito {
+        transform: rotate(-25deg) translateY(-30px);
+    }
+
+    .caixa-botoes {
+        justify-content: flex-start;
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    .botoes {
+        width: 60px;
+        height: 60px;
+    }
+
+    .botao-carrinho {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* ================================
+   DESKTOP — a partir de 1024px
+   ================================ */
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 20px 160px;
+        height: 100vh;
+    }
+
+    body::before {
+        top: 0;
+        left: -600px;
+        width: 100%;
+        height: 120%;
+    }
+
+    body::after {
+        font-size: 160px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    h4 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .caixa-texto {
+        max-width: 500px;
+    }
+
+    .imagem-tenis {
+        width: 650px;
+    }
+
+    .botoes {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* ================================
+   TELAS MUITO GRANDES — a partir de 1280px
+   ================================ */
+@media screen and (min-width: 1280px) {
+    .imagem-tenis {
+        width: 800px;
+    }
+
+    body::after {
+        font-size: 250px;
+    }
+}
+
